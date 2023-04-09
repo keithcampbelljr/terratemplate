@@ -10,8 +10,8 @@ def add_files(files, root_directory, template_name, stack_details):
                 stack_details['files'][os.path.relpath(file_path, template_name)] = file_contents
 
 def add_directories(root_directory, template_name, stack_details):
-    rel_path = os.path.relpath(root_directory, template_name)
-    if rel_path != "..":
+    relative_path = os.path.relpath(root_directory, template_name)
+    if relative_path != "..":
         stack_details['directories'].append(os.path.relpath(root_directory))
 
 def generate_terraform_stack_json(template_name):
