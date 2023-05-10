@@ -28,7 +28,7 @@ This Python tool is designed to assist with the creation and loading of Terrafor
 You can download the Python script directly or clone the whole repository.
 
 ```bash
-git clone https://github.com/yourgithub/terraform-json-tool.git
+git clone https://github.com/keithcampbelljr/terratemplate.git
 ```
 
 After cloning the repository, you can run the script with Python.
