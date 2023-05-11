@@ -31,10 +31,15 @@ You can download the Python script directly or clone the whole repository.
 git clone https://github.com/keithcampbelljr/terratemplate.git
 ```
 
+Install required packages
+```bash
+make install
+```
+
 After cloning the repository, you can run the script with Python.
 
 ```bash
-python main.py
+python terratemplate.py
 ```
 
 ## Usage
@@ -46,7 +51,7 @@ The tool provides two commands, `load-terraform-json` and `generate-terraform-js
 To create a Terraform stack using a JSON configuration file, you can use the `load-terraform-json` command:
 
 ```bash
-python main.py load-terraform-json --template-name=your_template_name
+python terratemplate.py load-terraform-json --template-name=your_template_name
 ```
 
 The JSON file should be named `your_template_name.json` and should be located in the same directory as this script. It should follow this structure:
@@ -71,7 +76,7 @@ The JSON file should be named `your_template_name.json` and should be located in
 To generate a Terraform stack JSON configuration file from your existing Terraform setup, you can use the `generate-terraform-json` command:
 
 ```bash
-python main.py generate-terraform-json --template-name=your_template_name
+python terratemplate.py generate-terraform-json --template-name=your_template_name
 ```
 
 The generated JSON file will be named your_template_name.json and will be located in the same directory as this script.
