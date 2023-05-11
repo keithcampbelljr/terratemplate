@@ -1,5 +1,5 @@
 PYTHON ?= python3
-PIP ?= pip3
+PIP ?= $(PYTHON) -m pip
 
 .PHONY: clean install
 
@@ -8,5 +8,8 @@ install:
 	$(PIP) install .
 
 clean:
+	$(PIP) uninstall -y \
+		click \
+		terratemplate
 	rm -rf build \
 		*.egg-info
