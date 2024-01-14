@@ -14,6 +14,6 @@ readme = "readme.md"
 requires-python = ">=3.6"
 
 [project.scripts]
-tftmpl-v = "terratemplate.terratemplate:cli"
-tftmpl-load = "terratemplate.terratemplate:load_terraform_json"
-tftmpl-gen = "terratemplate.terratemplate:generate_terraform_json"
+tftmpl -v = "terratemplate.terratemplate:cli"
+tftmpl load = "terratemplate.terratemplate:load_terraform_json"
+tftmpl save = "terratemplate.terratemplate:save_terraform_json"
