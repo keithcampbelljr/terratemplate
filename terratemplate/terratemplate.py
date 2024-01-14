@@ -2,13 +2,15 @@ import os
 import json
 import click
 
+VERSION = '0.1.1'
 
+@click.version_option(VERSION, '-v', '--version', '--v')
 @click.group()
 def cli():
     pass
 
 
-@cli.command()
+@cli.command(name='load')
 @click.option('--template-name', required=True, help='Name of the Terraform template')
 def load_terraform_json(template_name: str):
     """
@@ -53,11 +55,11 @@ def add_directories(root_directory: str, template_name: str, stack_details: dict
         stack_details['directories'].append(os.path.relpath(root_directory))
 
 
-@click.command()
+@cli.command(name='save')
 @click.option('--template-name', required=True, help='Name of the Terraform template')
-def generate_terraform_json(template_name: str):
+def save_terraform_json(template_name: str):
     """
-    Generate a Terraform stack JSON configuration file.
+    Save a Terraform stack JSON configuration file.
 
     This command walks the directory tree from the current working directory
     and creates a JSON file with the directory and file paths. The resulting JSON file
@@ -93,5 +95,5 @@ def generate_terraform_json(template_name: str):
 
 if __name__ == '__main__':
     cli.add_command(load_terraform_json)
-    cli.add_command(generate_terraform_json)
+    cli.add_command(save_terraform_json)
     cli()
